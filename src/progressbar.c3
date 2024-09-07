@@ -19,6 +19,7 @@ fn void ProgressBar.init(&self, int term_width, String info_text = "", char fini
 	self.progress = 0;
 }
 
+//should be a number between 0 & 1, inclusive
 fn void ProgressBar.update(&self, float current){
 	self.progress = current;
 }

@@ -5,22 +5,18 @@ import pgbar;
 
 fn int main(String[] args)
 {
-	tc::enter_alt_screen();
-	int term_width;
-	int term_height;
+	int term_width; int term_height;
+	int cx; int cy;
 	tc::get_cols_rows(&term_width, &term_height);
+	tc::get_cursor(&cx, &cy);
 	pgbar::ProgressBar bar;
-	bar.init(term_width, "Progress: ");
-	float maximum = 23;
-	for(int i =0; maximum >= i; i++){
-		tc::clear_screen();
-		bar.update((float)i/maximum);
-		tc::printfn_at(0, term_height-1, "%s", bar.show_progress());
-		tc::getch();
+	bar.init(term_width, "Working:");
+	bar.set_color(tc::GRN.str_view());
+	int demo_max = 325;
+	for(int i =0; demo_max >= i; i++){
+		bar.update((float)i/demo_max);
+		tc::printf_at(cx, cy, "%s", (ZString) bar.show_progress());
 	}
-	tc::printfn("%s", "Finished!");
-	tc::getch();
-	tc::exit_alt_screen();
-
+	tc::print("\n");
 	return 0;
 }

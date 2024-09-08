@@ -1,6 +1,6 @@
 # TERMINAL PROGRESS BAR
 
-A simple in terminal Progressbar, with a demo for using it with my [Tercontrol](link_here) bindings.
+A simple in terminal Progressbar, with a demo for using it with my [Tercontrol bindings](https://github.com/Elusive239/Tercontrol-C3.git).
 
 Its designed to be very simple and able to be used without tercontrol if desired!  
 
